@@ -57,10 +57,33 @@ app.post('/api/login', async (req, res) => {
 });
 
 // News (for demo)
+
 app.get('/api/news', (req, res) => {
   res.json([
-    { id: 1, title: "Load shedding Stage 4 announced", body: "Eskom declares Stage 4 from 18:00.", timestamp: new Date().toISOString() },
-    { id: 2, title: "Rain expected in Gauteng", body: "Heavy showers forecast for Johannesburg.", timestamp: new Date().toISOString() }
+    {
+      id: 1,
+      title: "Load Shedding Stage 4 Announced",
+      body: "Eskom has declared Stage 4 load shedding starting at 18:00 tonight due to multiple generator failures.",
+      category: "Energy",
+      timestamp: new Date().toISOString(),
+      source: "EskomSePush"
+    },
+    {
+      id: 2,
+      title: "Heavy Rain Expected in Gauteng",
+      body: "The South African Weather Service warns of severe thunderstorms and flooding in Johannesburg and Pretoria.",
+      category: "Weather",
+      timestamp: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
+      source: "SA Weather Service"
+    },
+    {
+      id: 3,
+      title: "New Job Portal Launched for Youth",
+      body: "The Department of Employment and Labour has launched a free job-matching platform for graduates.",
+      category: "Jobs",
+      timestamp: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
+      source: "Careers24"
+    }
   ]);
 });
 
