@@ -93,8 +93,16 @@ app.get('/api/news', (req, res) => {
       source: "Careers24"
     },
     {
-      id: 3,
+      id: 5,
       title: "This project was fun to work on",
+      body: "The Department of Employment and Labour has launched a free job-matching platform for graduates.",
+      category: "Jobs",
+      timestamp: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
+      source: "Careers24"
+    },
+    {
+      id: 6,
+      title: "Testing this for my video upload...",
       body: "The Department of Employment and Labour has launched a free job-matching platform for graduates.",
       category: "Jobs",
       timestamp: new Date(Date.now() - 86400000).toISOString(), // 1 day ago
